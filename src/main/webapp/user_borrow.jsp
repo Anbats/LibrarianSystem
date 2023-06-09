@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+        a:link{
+            font-size: 20px;
+            color: rgb(109,109,109);
+            text-decoration: none;
+        }
+
+        a:visited{
+            font-size: 20px;
+            color: rgb(109,109,109);
+            text-decoration: none;
+        }
+
+        a:hover{
+            font-size: 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+       *{
+            box-sizing: border-box;
+        }
+
+        div.search {
+            padding: 10px 0;
+        }
+
+        form {
+            position: relative;
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        input,button {
+            border: none;
+            outline: none;
+        }
+
+        .search input {
+            width: 100%;
+            height: 42px;
+            padding-left: 13px;
+            border: 2px solid #c5464a;
+            border-radius: 19px;
+            background: transparent;
+        }
+
+        .search button {
+            height: 42px;
+            width: 42px;
+            cursor: pointer;
+            position: absolute;
+            background: #c5464a;
+            border-radius: 0 19px 19px 0;
+            width: 60px;
+            right: 0;
+        }
+        .search button:hover {
+            background-color: #c7585c;
+        }
+
+        .search button:before {
+            content: "查询";
+            font-size: 13px;
+            color: #F9F0DA;
+        }
+
+        .container{
+            display: none;
+		    width:70%;
+		    height:70%;
+		    position:absolute;
+		    left:58%;
+		    top:49%;
+		    transform:translate(-50%,-50%);
+		}
+        .drag-bar{
+            width:100%;
+            height:5%;
+            background-color:#d8dadb;
+            border-top-left-radius:10px;
+            border-top-right-radius:10px;
+        }
+        .content{
+            width:100%;
+            height:95%;
+            background-color:#f1f3f4;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            border-bottom-left-radius:10px;
+            border-bottom-right-radius:10px;
+        }
+        .close{
+            display:block;
+            position:relative;
+            text-align:right;
+            left:-10px;
+            top:15px;
+            color:red;
+            font-size:25px;
+            transform:translateY(-50%);
+            text-decoration:none;
+        }
+
+</style>
+<body>
+<div >
+
+  <div style="background-color: rgb(0,21,41);width: 20%; height: 800px;float:left;">
+
+    <div style="background-color: rgb(0,40,77);">
+      <img src="img/touxiang.png" style="width:250px; height: 250px; padding:20px 0px 25px 45px; "/>
+    </div>
+
+    <div style="text-align: center; padding:30px 0px 15px 0px; ">
+      <a href="user_borrow.html">查询与借阅</a>
+    </div>
+
+    <div style="text-align: center; padding:20px 0px 15px 0px; ">
+      <a href="user_list.html">借书记录</a>
+    </div>
+
+    <div style="text-align: center; padding:20px 0px 15px 0px; ">
+      <a href="user_return.html">归还图书</a>
+    </div>
+
+    <div style="text-align: center; padding:20px 0px 20px 0px; ">
+      <a href="login.jsp">退出登录</a>
+    </div>
+
+  </div>
+
+  <div style="width:80%; height: 800px; float:left;">
+    <div style="height: 70px; color: rgb(109,109,109); font-size: 18px; line-height: 70px; font-weight: bold; padding-left: 20px;">
+      >&nbsp;&nbsp;查询与借阅
+    </div>
+
+    <div style="background-color: rgb(240,242,245);height: 730px;padding: 20px;">
+      <div style="background-color: white;height: 730px;border:none;border-radius: 5px;">
+
+        <div class="search" style="box-sizing: border-box;">
+          <form action="" method="post">
+            <input placeholder="请输入图书的相关信息" name="keyword" type="text">
+            <button type="submit"></button>
+          </form>
+        </div>
+
+
+        <div style=" width:100%; height: 400px; overflow-y:scroll" >
+            <div  style="height:1000px">
+
+              <table width="80%" cellspacing="0" border="1" style="margin-top:20px; margin-left:100px">
+                <thead align="center">
+
+                <tr>
+                  <th>编号</th>
+                  <th>书名</th>
+                  <th>作者</th>
+                  <th>类型</th>
+                  <th>出版社</th>
+                  <th>状态</th>
+                  <th>操作</th>
+                </tr>
+
+                </thead>
+                <tbody>
+
+                <tr align="center">
+                  <td>1001</td>
+                  <td>开心超人</td>
+                  <td>张三</td>
+                  <td>童话</td>
+                  <td>河南大学出版社</td>
+                  <td>在库</td>
+                  <td>
+                    <a href="">借阅</a>
+                    <button onclick = "openDialog()" style="font-size: 14px; color: black;text-decoration:none;">详细信息</button>
+                  </td>
+                </tr>
+
+
+                </tbody>
+              </table>
+            </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
+
+
+<div id="light" class="container">
+  <div class="drag-bar">
+    <div style="width:5%;margin-left:90%"><a href = "javascript:void(0)" onclick = "closeDialog()" class="close" >×</a></div>
+  </div>
+  <div class="content">
+    <div style="width:30%; float:left; margin-left:3%">
+      <img src="img/santi.jpg" style="width:200px; height: 250px; margin-top:-200px; margin-left:0px;"/>
+    </div>
+    <div style="width:70%; float:left; margin-right:3%; margin-top:-200px">
+      <p>
+        &nbsp&nbsp&nbsp&nbsp文化大革命如火如荼地进行，天文学家叶文洁在其间历经劫难，被带到军方绝秘计划“红岸工程”。叶文洁以太阳为天线，向宇宙发出地球文明的第一声啼鸣，取得了探寻外星文明的突破性进展。三颗无规则运行的太阳主导下，四光年外的“三体文明”百余次毁灭与重生，正被逼迫不得不逃离母星，而恰在此时，他们接收到了地球发来的信息。对人性绝望的叶文洁向三体人暴露了地球的坐标，彻底改变了人类的命运。
+        </br>&nbsp&nbsp&nbsp&nbsp地球的基础科学出现了异常的扰动，纳米科学家汪淼进入神秘的网络游戏《三体》，开始逐步逼近这个世界的真相。汪淼参加一次玩家聚会时，接触到了地球上应对三体人到来而形成的一个秘密组织（ETO）。地球防卫组织中国区作战中心通过“古筝计划”，一定程度上挫败了拯救派和降临派扰乱人类科学界和其他领域思想的图谋，获悉处于困境之中的三体人为了得到一个能够稳定生存的世界决定入侵地球。
+        在运用超技术锁死地球人的基础科学之后，庞大的三体舰队开始向地球进发，人类的末日悄然来临.
+      </p>
+    </div>
+  </div>
+</div>
+<div id="fade" class="black_overlay"></div>
+<script src="index.js"></script>
+
+</body>
+</html>

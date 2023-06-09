@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+        *{
+            box-sizing: border-box;
+        }
+
+        a:link{
+            font-size: 20px;
+            color: rgb(109,109,109);
+            text-decoration: none;
+        }
+
+        a:visited{
+            font-size: 20px;
+            color: rgb(109,109,109);
+            text-decoration: none;
+        }
+
+        a:hover{
+            font-size: 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .text{
+            font-size: 20px;
+            text-align:center;
+        }
+
+</style>
+<body>
+
+<div>
+
+    <div style="background-color: rgb(0,21,41);width: 20%; height: 800px;float:left;">
+
+        <div style="background-color: rgb(0,40,77);">
+            <img src="img/touxiang.png" style="width:250px; height: 250px; padding:20px 0px 25px 45px; "/>
+        </div>
+
+        <div style="text-align: center; padding:30px 0px 15px 0px; ">
+            <a href="system_search.html">查找图书管理员</a>
+        </div>
+
+        <div style="text-align: center; padding:20px 0px 15px 0px; ">
+            <a href="system_new.html">新增图书管理员</a>
+        </div>
+
+        <div style="text-align: center; padding:20px 0px 15px 0px; ">
+            <a href="system_delete.html">删除图书管理员</a>
+        </div>
+
+        <div style="text-align: center; padding:20px 0px 20px 0px; ">
+            <a href="login.html">退出登录</a>
+        </div>
+
+    </div>
+
+    <div style="width:80%; height: 800px; float:left;">
+        <div style="height: 70px; color: rgb(109,109,109); font-size: 18px; line-height: 70px; font-weight: bold; padding-left: 20px;">
+            >&nbsp;&nbsp; 新增图书管理员
+        </div>
+
+        <div style="background-color: rgb(240,242,245);height: 730px;padding: 20px;">
+            <div style="background-color: white;height: 730px;border:none;border-radius: 5px;">
+
+                <form>
+                    <table align="center">
+                        <caption>新增管理员</caption>
+                        <tr>
+                            <td>管理员名：</td>
+                            <td>
+                                <input type="text"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>性别：</td>
+                            <td>
+                                <input type="radio" text="男" name="sex"/>
+                                <input type="radio" text="女" name="sex"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>密码：</td>
+                            <td>
+                                <input type="text"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="text-align: center; padding: 5px;">
+                                <input type="button" value="提交"/>
+                                <input type="button" value="重置"/>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>登录</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    height: 100%;
+  }
+  body {
+    height: 100%;
+  }
+  .container0{
+    height: 100%;
+    background-image: linear-gradient(to right, #117c6f, #289c8e,#2fc4b2,#8de5db,#b2f0eb);
+  }
+  .login-wrapper {
+    background-image: linear-gradient(to right,#018abe,#97cadb,#d6e8ee);
+    width: 358px;
+    height: 588px;
+    border-radius: 15px;
+    padding: 0 50px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .header {
+    font-size: 38px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 200px;
+  }
+  .rbtn{
+    text-align:center;
+    padding-bottom: 30px;
+  }
+  .input-item {
+    display: block;
+    width:250px;
+    margin-bottom: 20px;
+    border: 0;
+    padding: 10px;
+    border-bottom: 1px solid rgb(128,125,125);
+    font-size: 15px;
+    outline: none;
+  }
+  .input-item::placeholder {
+    text-transform: uppercase;
+  }
+  .btn {
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    margin-top: 40px;
+    background-color: bisque;
+    color: black;
+  }
+  .msg {
+    text-align: center;
+    line-height: 88px;
+  }
+  a {
+    text-decoration-line: none;
+    color: red;
+  }
+  .container{
+    display: none;
+    width:400px;
+    height:400px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+  }
+  .drag-bar{
+    width:100%;
+    height:30px;
+    background-color:#d8dadb;
+  }
+  .content{
+    width:100%;
+    height:370px;
+    background-color:#f1f3f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+  .close{
+    display:block;
+    position:relative;
+    text-align:right;
+    left:-10px;
+    top:15px;
+    color:red;
+    font-size:25px;
+    transform:translateY(-50%);
+    text-decoration:none;
+  }
+</style>
+<body>
+<div class="container0">
+  <div class="login-wrapper">
+    <div class="header">登录</div>
+    <div class="rbtn">
+      <input type="radio" id="user" name="object" value="1" checked="checked" onclick="change1()">
+      <label for="user">用户</label>
+      <input type="radio" id="librarian" name="object" value="0" onclick="change2()">
+      <label for="librarian">图书管理员</label>
+      <input type="radio" id="system_administrator" name="object" value="0" onclick="change3()">
+      <label for="system_administrator">系统管理员</label>
+    </div>
+    <div class="form-wrapper">
+      <form>
+        <table>
+          <tr>
+            <td>用户名：</td>
+            <td>
+              <input type="text" name="username" placeholder="用户名" class="input-item">
+            </td>
+          </tr>
+          <tr>
+            <td>密码：</td>
+            <td>
+              <input type="password" name="password" placeholder="密码" class="input-item">
+            </td>
+          </tr>
+        </table>
+      </form>
+      <button class="btn" onclick="onclickFun()">登录</button>
+    </div>
+    <div class="msg">
+      没有账户？
+      <a href="#" onclick="openDialog1()">注册</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      <a href="#" onclick="openDialog2()">忘记密码</a>
+    </div>
+  </div>
+  <div id="light1" class="container">
+    <div class="drag-bar">
+      <div style="width:5%;margin-left:90%"><a href = "javascript:void(0)" onclick = "closeDialog1()" class="close" >×</a></div>
+    </div>
+    <div class="content">
+      <form>
+        <table align="center">
+          <caption>注册</caption>
+          <tr>
+            <td>姓名：</td>
+            <td>
+              <input type="text"/>
+            </td>
+          </tr>
+          <tr>
+            <td>密码：</td>
+            <td>
+              <input type="text"/>
+            </td>
+          </tr>
+          <tr>
+            <td>绑定的qq邮箱：</td>
+            <td>
+              <input type="text"/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" style="text-align: center; padding: 5px;">
+              <input type="button" value="提交"/>
+              <input type="reset" value="重置"/>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+  <div id="light2" class="container">
+    <div class="drag-bar">
+      <div style="width:5%;margin-left:90%"><a href = "javascript:void(0)" onclick = "closeDialog2()" class="close" >×</a></div>
+    </div>
+    <div class="content">
+      <form>
+        <table align="center">
+          <caption>忘记密码</caption>
+          <tr>
+            <td>绑定的qq账号：</td>
+            <td>
+              <input type="text"/>
+            </td>
+          </tr>
+          <tr>
+            <td>验证码：</td>
+            <td>
+              <input type="text"/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" style="text-align: center; padding: 5px;">
+              <input type="button" value="提交"/>
+              <input type="reset" value="重置"/>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</div>
+</body>
+</html>

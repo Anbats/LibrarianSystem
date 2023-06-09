@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="js/axios-0.18.0.js"></script>
+<script>
+//1\get
+
+
+   /* axios({
+        method:"get",
+        url:"http://localhost:8080/librarySystem_war//AlaxServlet?username=张三"
+    }).then(function (resp) {
+        alert(resp.data);
+    })*/
+
+
+//2.post
+/*axios({
+    method:"post",
+    url:"http://localhost:8080/librarySystem_war//AlaxServlet",
+    data:"username=张三"
+}).then(function (res) {
+    alert("121");
+})*/
+
+axios.post("http://localhost:8080/librarySystem_war//AlaxServlet","username=张三").then(function (res) {
+    alert(res.data);
+
+})
+    // // 创建 XMLHttpRequest 对象
+    // const xhttp = new XMLHttpRequest();
+    //
+    // // 定义回调函数
+    // xhttp.onload = f unction() {
+    //     // 您可以在这里使用数据
+    // }
+    //
+    // // 发送请求
+    // xhttp.open("GET", "http://localhost:8080/librarySystem_war//AlaxServlet");
+    // xhttp.send();
+    //
+    // //获取响应
+    // xhttp.onreadystatechange = function() {
+    //     if (this.readyState == 4 && this.status == 200) {
+    //         alert(this.responseText);//弹出警告框hello ajax
+    //     }
+    // };
+
+</script>
+</body>
+</html>
